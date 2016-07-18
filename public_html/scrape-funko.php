@@ -14,7 +14,6 @@ $out_of_data = false;
 
 $api = new funkoApi();
 
-//$con = mysqli_connect("localhost","root","freesong1","collectopop");
 
 while(!$out_of_data){
 	$full_content = file_get_html($endpoint.$page);
@@ -52,7 +51,6 @@ while(!$out_of_data){
 	}
 	$page++;
 }
-//mysqli_close($con);
 
 ?>
 
