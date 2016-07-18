@@ -1,0 +1,10 @@
+{
+  "appId": "angularetsy-jkn",
+  "apiKey": "267b80d4b12d22569cce862ce601056721db7e8a98f08a282d53bd2a419ed151",
+  "public": "./",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
