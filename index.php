@@ -38,11 +38,16 @@
           </div>
         </div>
          <ul>
-            <li ng-repeat="item in items|orderBy:sortKey:sortOrder|filter:search" class="funko-grid-item col-xs-12 col-sm-4">
+            <li dir-paginate="item in items|orderBy:sortKey:sortOrder|filter:search|itemsPerPage:9" class="funko-grid-item col-xs-12 col-sm-4">
               <img ng-src="images/pops/{{item.id}}.jpg"/>
               {{item.name}};
             </li>
         </ul>
+        <dir-pagination-controls
+           max-size="5"
+           direction-links="true"
+           boundary-links="true" >
+        </dir-pagination-controls>
       </div>
     </div>
   </div>
@@ -57,6 +62,7 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="node_modules/angular-utils-pagination/dirPagination.js"></script>
   <script src="app.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>

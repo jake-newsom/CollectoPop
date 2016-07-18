@@ -1,1 +1,1 @@
-var app = angular.module('collectoPop', []);
+var app = angular.module('collectoPop', ['angularUtils.directives.dirPagination'])
