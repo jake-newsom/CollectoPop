@@ -9,6 +9,7 @@
   <title>CollectoPop</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,12 +38,17 @@
             </form>
           </div>
         </div>
-         <ul>
-            <li dir-paginate="item in items|orderBy:sortKey:sortOrder|filter:search|itemsPerPage:9" class="funko-grid-item col-xs-12 col-sm-4">
-              <img ng-src="images/pops/{{item.id}}.jpg"/>
-              {{item.name}};
-            </li>
-        </ul>
+        <div class="row" id="funko-list">
+            <div dir-paginate="item in items|orderBy:sortKey:sortOrder|filter:search|itemsPerPage:9">
+              <div class="clearfix" ng-if="$index % 3 == 0"></div>
+              <div  class="col-xs-12 col-sm-4">
+                <div class="funko-grid-item">
+                  <img ng-src="images/pops/{{item.id}}.jpg"/>
+                  <h3>{{item.name}}</h3>
+                </div>
+              </div>
+            </div>
+        </div>
         <dir-pagination-controls
            max-size="5"
            direction-links="true"
