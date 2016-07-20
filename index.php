@@ -23,11 +23,14 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div id="left-side-bar" ng-controller="SidebarList" class="col-xs-12 col-sm-3">
-        {{message}}
+      <div id="left-side-bar" ng-controller="SidebarList" ng-init="getCollections()" class="col-xs-12 col-sm-3">
+        <ul id="collection-list">
+          <li ng-repeat="collection in collections">
+            {{collection.name}}
+          </li>
+        </ul>
       </div>
       <div id="pop-grid-list" ng-controller="PopGridList" ng-init="getItems()" class="col-xs-12 col-sm-9">
-        {{message}}
         <div class="row">
           <div class='col-xs-12'>
             <form class="form-inline">
