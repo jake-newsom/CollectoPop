@@ -23,28 +23,30 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div id="left-side-bar" ng-controller="SidebarList" ng-init="getCollections()" class="col-xs-12 col-sm-3">
-        <ul id="collection-list">
-          <li ng-repeat="collection in collections">
-            {{collection.name}}
-          </li>
+      <!--<div id="left-side-bar" ng-controller="SidebarList" ng-init="getCollections()" class="col-xs-12 col-sm-3">
+        <ul>
+          <li>Pops</li>
+          <li>My Collection</li>
+          <li>Add Custom</li>
         </ul>
-      </div>
-      <div id="pop-grid-list" ng-controller="PopGridList" ng-init="getItems()" class="col-xs-12 col-sm-9">
-        <div class="row">
-          <div class='col-xs-12'>
-            <form class="form-inline">
+      </div>-->
+      <div id="pop-grid-list" ng-controller="PopGridList" ng-init="getItems()" class="col-xs-12">
+        <div class="row" id="list-title-bar">
+          <div class="col-xs-12 col-sm-6">
+            <h2>{{pageName}}</h2>
+          </div>
+          <div class='col-xs-12 col-sm-6'>
+            <form class="form" id="funko-filter">
               <div class="form-group">
-                <label >Search</label>
-                <input type="text" ng-model="search" class="form-control" placeholder="Search">
+                <input type="text" ng-model="search" class="form-control col-xs-12" placeholder="Looking for Something?" id="search">
               </div>
             </form>
           </div>
         </div>
         <div class="row" id="funko-list">
-            <div dir-paginate="item in items|orderBy:sortKey:sortOrder|filter:search|itemsPerPage:9">
-              <div class="clearfix" ng-if="$index % 3 == 0"></div>
-              <div  class="col-xs-12 col-sm-4">
+            <div dir-paginate="item in items|orderBy:sortKey:sortOrder|filter:search|itemsPerPage:12">
+              <div class="clearfix" ng-if="$index % 4 == 0"></div>
+              <div  class="col-xs-12 col-sm-3">
                 <div class="funko-grid-item">
                   <img ng-src="images/pops/{{item.id}}.jpg"/>
                   <h3>{{item.name}}</h3>

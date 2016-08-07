@@ -1,6 +1,8 @@
 app.controller('PopGridList', function($scope,$http) {
-  $scope.message = 'Load the funko pops...';
-  $scope.items = [];
+
+    $scope.collection = 'All';
+    $scope.pageName = "Funko Pops";
+    $scope.items = [];
 
     $scope.getItems = function() {
 
